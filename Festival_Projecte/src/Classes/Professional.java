@@ -61,7 +61,7 @@ public class Professional extends  Persona {
 	
 	public void IniciJornada(Date horaInici) {
 		
-		if(horaInici < 8) {
+		//if(horaInici < 8) {
 			
 		}
 		
