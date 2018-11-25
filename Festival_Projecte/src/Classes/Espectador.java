@@ -1,6 +1,5 @@
 package Classes;
-
-public class Espectador  extends Persona{
+ public class Espectador extends Persona{
 	
 	private String tipusEntrada;
 	private int diesAssistencia;
@@ -41,5 +40,4 @@ public class Espectador  extends Persona{
 	
 	
 	
-
-}
+ }
