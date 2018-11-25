@@ -31,4 +31,5 @@ public class Main {
 		//Persona p6 = new Artista("Aitana", "Ocaña", "47569872W", 19, TipusTorn.Tarda, (25,11,2018,15,00,00), (25, 11, 2018, 18, 00, 00), 1000, "Aitana");
 	}
 	
+	
 }
