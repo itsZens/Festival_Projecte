@@ -10,10 +10,10 @@ public abstract class Persona {
 	protected HumanNeeds necessitats = HumanNeeds.Cap;
 	protected boolean dintreRecinte = false;
 	
-	public Persona(String nom, String cognoms, String dNI, int edat) {
+	public Persona(String nom, String cognoms, String DNI, int edat) {
 		this.nom = nom;
 		this.cognoms = cognoms;
-		DNI = dNI;
+		this.DNI = DNI;
 		this.edat = edat;
 		this.necessitats = HumanNeeds.Cap;
 		this.dintreRecinte = false;
