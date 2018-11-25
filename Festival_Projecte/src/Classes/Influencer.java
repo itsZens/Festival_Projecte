@@ -1,20 +1,38 @@
 package Classes;
 import Enumeration.TipusInfluencer;
-import Enumeration.TipusVIP;
 
 public class Influencer extends VIP implements Comparable<Influencer> {
 	private TipusInfluencer tipusInfluencer;
 	private int numSeguidors;
 	private String nick;
 	
-	public Influencer(String nom, String cognoms, String DNI, int edat, TipusVIP tipusVIP, TipusInfluencer influencer, int seguidors, String nick) {
-		super(nom, cognoms, DNI, edat, tipusVIP);
+	public Influencer(String nom, String cognoms, String DNI, int edat, TipusInfluencer influencer, int seguidors, String nick) {
+		super(nom, cognoms, DNI, edat);
 		this.tipusInfluencer = influencer;
 		this.numSeguidors = seguidors;
 		this.nick = nick;
 		
 	}
 	
+	
+	public TipusInfluencer getTipusInfluencer() {
+		return tipusInfluencer;
+	}
+
+
+
+	public int getNumSeguidors() {
+		return numSeguidors;
+	}
+
+
+
+	public String getNick() {
+		return nick;
+	}
+
+
+
 	public void PostEnXarxesSocials() {
 		System.out.println("L'influencer " + nick + " (" + super.nom + " " + super.cognoms + ") "
 				+ "acaba de publicar un nou post a les seves xarxes socials sobre el festival.");

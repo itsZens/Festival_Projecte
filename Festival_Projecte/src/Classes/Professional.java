@@ -7,7 +7,6 @@ import Enumeration.TipusTorn;
  
 public abstract class Professional extends  Persona implements Comparable<Professional> {
 	
-	protected String llocTreball;
 	protected TipusTorn tornDia;
 	protected Date horariInici;
 	protected Date horariFinal;
@@ -16,22 +15,17 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 	
 
 	
-	public Professional(String nom, String cognoms, String DNI, int edat, String llocTreball, TipusTorn tornDia,
+	public Professional(String nom, String cognoms, String DNI, int edat, TipusTorn tornDia,
 			Date horariInici, Date horariFinal, float salari) {
 		super(nom, cognoms, DNI, edat);
-		this.llocTreball = llocTreball;
 		this.tornDia = tornDia;
 		this.horariInici = horariInici;
 		this.horariFinal = horariFinal;
 		this.salari = salari;
 		this.tempsDisponibleDeDescans = 60;
 	}
-	public String getLlocTreball() {
-		return llocTreball;
-	}
-	public void setLlocTreball(String llocTreball) {
-		this.llocTreball = llocTreball;
-	}
+	
+	
 	public TipusTorn getTornDia() {
 		return tornDia;
 	}

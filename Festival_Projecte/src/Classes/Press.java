@@ -1,15 +1,14 @@
 package Classes;
 
 import Enumeration.TipusMitjaCom;
-import Enumeration.TipusVIP;
 
 public class Press extends VIP{
 	private TipusMitjaCom tipusMitjaComunicacio;
 	private String nomMitjaComunicacio;
 	
 	public Press(String nom, String cognoms, String DNI, int edat, 
-			TipusVIP tipusVIP, TipusMitjaCom tipusMitja, String nomMitja) {
-		super(nom, cognoms, DNI, edat, tipusVIP);
+			 TipusMitjaCom tipusMitja, String nomMitja) {
+		super(nom, cognoms, DNI, edat);
 		this.tipusMitjaComunicacio = tipusMitja;
 		this.nomMitjaComunicacio = nomMitja;
 	}

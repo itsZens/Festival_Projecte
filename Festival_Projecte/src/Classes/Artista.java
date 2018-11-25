@@ -13,9 +13,9 @@ public class Artista extends Professional {
 	
 
 	
-	public Artista(String nom, String cognoms, String DNI, int edat, String llocTreball, TipusTorn tornDia,
+	public Artista(String nom, String cognoms, String DNI, int edat, TipusTorn tornDia,
 			Date horariInici, Date horariFinal, float salari, String nomArtistic) {
-		super(nom, cognoms, DNI, edat, llocTreball, tornDia, horariInici, horariFinal, salari);
+		super(nom, cognoms, DNI, edat, tornDia, horariInici, horariFinal, salari);
 		this.nomArtistic = nomArtistic;
 	}
 
