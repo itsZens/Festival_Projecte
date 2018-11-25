@@ -1,19 +1,18 @@
 package Classes;
-
 import java.util.GregorianCalendar;
-import java.util.Random;
 
+import Enumeration.TipusTorn;
 import sun.util.calendar.LocalGregorianCalendar.Date;
 
-public abstract class Professional extends  Persona implements Comparable<Professional>  {
+public abstract class Professional extends  Persona implements Comparable<Professional> {
 	
 	protected String llocTreball;
-	protected String tornDia;
+	protected TipusTorn tornDia;
 	protected Date horariInici;
 	protected Date horariFinal;
 	protected float salari;
 	
-	public Professional(String nom, String cognoms, String DNI, int edat, String llocTreball, String tornDia,
+	public Professional(String nom, String cognoms, String DNI, int edat, String llocTreball, TipusTorn tornDia,
 			Date horariInici, Date horariFinal, float salari) {
 		super(nom, cognoms, DNI, edat);
 		this.llocTreball = llocTreball;
@@ -29,10 +28,10 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 	public void setLlocTreball(String llocTreball) {
 		this.llocTreball = llocTreball;
 	}
-	public String getTornDia() {
+	public TipusTorn getTornDia() {
 		return tornDia;
 	}
-	public void setTornDia(String tornDia) {
+	public void setTornDia(TipusTorn tornDia) {
 		this.tornDia = tornDia;
 	}
 	public Date getHorariInici() {
@@ -59,42 +58,59 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 	}
 	@Override
 	public void SurtenDelRecinte() {
+	    GregorianCalendar hora = new GregorianCalendar();
+	    int horaAleatoria = randBetween(7, 23);
+	    hora.set(hora.HOUR, horaAleatoria);
+		ComprovaHorari(hora);
 		
-		GregorianCalendar newDate = new GregorianCalendar();
-		Random ComprovaHora = new Random();
-		int hora = ComprovaHora.nextInt(17)+5;
-		newDate.set(newDate.HOUR, hora);
 		
-		
-			
-		ComprovaHorari(newDate);
-		
-		super.SurtenDelRecinte();
 	}        
 	
 	public void IniciJornada() {
 		
-		System.out.println("Estas treballant: "+super.nom+" "+super.cognoms);
-
-			
+		System.out.println("Comences a treballar: " + super.nom + " " + super.cognoms);
 		}
 	
-	public void ComprovaHorari(GregorianCalendar newDate) {
+	public void ComprovaHorari(GregorianCalendar hora) {
+		if(tornDia == TipusTorn.Matí) {
 		
-		
-		if(newDate.before(8) || newDate.after(12)) {
-			
-			System.out.println("Estas fora del teu horari no pots accedir al recinte");
-			
-		}else {
-			System.out.println("Estas dins del teu horari  pots accedir al recinte");
+			if(hora.before(9)|| hora.after(13)) {			
+			System.out.println("Estàs fora del teu horari no pots accedir al recinte");	
 
+			}else {
+				System.out.println("Estàs dins del teu horari  pots accedir al recinte");
+				 super.setDintreRecinte(false);
+
+			}
+		}else if(tornDia == TipusTorn.Tarda) {
+			if(hora.before(13)|| hora.after(18)) {			
+				System.out.println("Estàs fora del teu horari no pots accedir al recinte");	
+
+			}else {
+				System.out.println("Estàs dins del teu horari  pots accedir al recinte");
+				 super.setDintreRecinte(false);
+
+			}
+		}else if(tornDia == TipusTorn.Nit) {
+			if(hora.before(18)|| hora.after(23)) {			
+				System.out.println("Estàs fora del teu horari no pots accedir al recinte");	
+
+			}else {
+				System.out.println("Estàs dins del teu horari  pots accedir al recinte");
+				 super.setDintreRecinte(false);
+			}
 		}
-	
 		
-		 
+		
 	}
 	
-	
-
+	@Override
+	public int compareTo(Professional t) {
+		if (this.salari == t.salari)		return 0;
+		else if (this.salari > t.salari)	return 1;
+		else 								return -1;
+	}
+	 private static int randBetween(int start, int end) {
+	        return start + (int)Math.round(Math.random() * (end - start));
+	    }
 }
