@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import Enumeration.TipusTorn;
-
+ 
 public abstract class Professional extends  Persona implements Comparable<Professional> {
 	
 	protected String llocTreball;
@@ -12,6 +12,9 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 	protected Date horariInici;
 	protected Date horariFinal;
 	protected float salari;
+	protected int tempsDisponibleDeDescans;
+	
+
 	
 	public Professional(String nom, String cognoms, String DNI, int edat, String llocTreball, TipusTorn tornDia,
 			Date horariInici, Date horariFinal, float salari) {
@@ -21,8 +24,8 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 		this.horariInici = horariInici;
 		this.horariFinal = horariFinal;
 		this.salari = salari;
+		this.tempsDisponibleDeDescans = 60;
 	}
-	
 	public String getLlocTreball() {
 		return llocTreball;
 	}
@@ -53,6 +56,13 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 	public void setSalari(float salari) {
 		this.salari = salari;
 	}
+	
+	public int getTempsDisponibleDeDescans() {
+		return tempsDisponibleDeDescans;
+	}
+	public void setTempsDisponibleDeDescans(int tempsDisponibleDeDescans) {
+		this.tempsDisponibleDeDescans = tempsDisponibleDeDescans;
+	}
 	@Override
 	public void AccedeixenAlRecinte() {
 		super.AccedeixenAlRecinte();
@@ -72,7 +82,7 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 		System.out.println("Comences a treballar: " + super.nom + " " + super.cognoms);
 		}
 	
-	public void ComprovaHorari(GregorianCalendar hora) {
+	private void ComprovaHorari(GregorianCalendar hora) {
 		if(tornDia == TipusTorn.Matí) {
 		
 			if(hora.before(9)|| hora.after(13)) {			
@@ -114,4 +124,18 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 	 private static int randBetween(int start, int end) {
 	        return start + (int)Math.round(Math.random() * (end - start));
 	    }
+	 protected void DescansJornada() {
+		 
+		 int descans = 15;
+		 int tempsRestant= this.tempsDisponibleDeDescans -descans;
+		 this.tempsDisponibleDeDescans = tempsRestant;
+		 if(this.tempsDisponibleDeDescans == 0) {
+			 System.out.println("No tens més temps per descançar");
+		 }else {
+			 System.out.println("Tens "+this.tempsDisponibleDeDescans);
+		 }
+		 
+		 
+		 
+	 }
 }
