@@ -60,9 +60,7 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 	public int getTempsDisponibleDeDescans() {
 		return tempsDisponibleDeDescans;
 	}
-	public void setTempsDisponibleDeDescans(int tempsDisponibleDeDescans) {
-		this.tempsDisponibleDeDescans = tempsDisponibleDeDescans;
-	}
+	
 	@Override
 	public void AccedeixenAlRecinte() {
 		super.AccedeixenAlRecinte();
