@@ -2,7 +2,7 @@ package Classes;
 import Enumeration.TipusInfluencer;
 import Enumeration.TipusVIP;
 
-public class Influencer extends VIP {
+public class Influencer extends VIP implements Comparable<Influencer> {
 	private TipusInfluencer tipusInfluencer;
 	private int numSeguidors;
 	private String nick;
@@ -23,5 +23,12 @@ public class Influencer extends VIP {
 	public void PhotoCall() {
 		System.out.println("L'influencer " + nick + " (" + super.nom + " " + super.cognoms + ") s'està fent fotos al photocall del festival "
 				+ "amb seguidors, altres influencers i marques.");
+	}
+	
+	@Override
+	public int compareTo(Influencer i) {
+		if (this.numSeguidors == i.numSeguidors)		return 0;
+		else if (this.numSeguidors > i.numSeguidors)	return 1;
+		else 											return -1;
 	}
 }
