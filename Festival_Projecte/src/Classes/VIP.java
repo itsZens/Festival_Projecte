@@ -14,4 +14,5 @@ public abstract class VIP extends Persona {
 	public TipusVIP getTipusVIP() {
 		return tipusVIP;
 	}	
+	
 }
