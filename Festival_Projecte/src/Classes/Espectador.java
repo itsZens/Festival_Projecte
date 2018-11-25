@@ -1,8 +1,9 @@
 package Classes;
 
 import Enumeration.TipusEntrada;
+import Interfaces.Públic_Festival;
 
-public class Espectador extends Persona{
+public class Espectador extends Persona implements Públic_Festival{
 	 
 	private int diesAssistencia;
 	private float pressupost;
@@ -32,6 +33,36 @@ public class Espectador extends Persona{
 		
 		return pressupost - preu;
 		
+		
+	}
+	@Override
+	public void Saltar() {
+		
+		System.out.println("Saltant");
+		
+	}
+	@Override
+	public void Ballar() {
+		
+		System.out.println("Ballant");
+		
+	}
+	@Override
+	public void Cantar() {
+		
+		System.out.println("Cantant");
+		
+	}
+	@Override
+	public void GaudirActuacio() {
+		
+		System.out.println("Sembla que li encanta");
+		
+	}
+	@Override
+	public void DescontentAmbActuacio() {
+		
+		System.out.println("La gent mostra la seva indignació");
 		
 	}
 	

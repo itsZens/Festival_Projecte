@@ -1,8 +1,9 @@
 package Classes;
 
 import Enumeration.HumanNeeds;
+import Interfaces.Públic_Festival;
 
-public abstract class Persona {
+public abstract class Persona implements Públic_Festival{
 	protected String nom;
 	protected String cognoms;
 	protected String DNI;
@@ -90,6 +91,36 @@ public abstract class Persona {
 	@Override
 	public String toString() {
 		return "Em dic " + nom + " " + cognoms + ", el meu DNI és " + DNI + "i la meva edat és " + edat + ".";
+	}
+	@Override
+	public void Saltar() {
+		
+		System.out.println("Saltant");
+		
+	}
+	@Override
+	public void Ballar() {
+		
+		System.out.println("Ballant");
+		
+	}
+	@Override
+	public void Cantar() {
+		
+		System.out.println("Cantant");
+		
+	}
+	@Override
+	public void GaudirActuacio() {
+		
+		System.out.println("Sembla que li encanta");
+		
+	}
+	@Override
+	public void DescontentAmbActuacio() {
+		
+		System.out.println("La gent mostra la seva indignació");
+		
 	}
 
 }
