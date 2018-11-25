@@ -1,6 +1,6 @@
 package Classes;
 
-import Enumerations.HumanNeeds;
+import Enumeration.HumanNeeds;
 
 public abstract class Persona {
 	protected String nom;
@@ -11,7 +11,6 @@ public abstract class Persona {
 	protected boolean dintreRecinte = false;
 	
 	public Persona(String nom, String cognoms, String dNI, int edat) {
-		super();
 		this.nom = nom;
 		this.cognoms = cognoms;
 		DNI = dNI;
@@ -87,4 +86,10 @@ public abstract class Persona {
 			System.out.println(nom + " " + cognoms + ": Buuff... massa cua per a les ganes que tinc.");
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Em dic " + nom + " " + cognoms + ", el meu DNI és " + DNI + "i la meva edat és " + edat + ".";
+	}
+
 }
