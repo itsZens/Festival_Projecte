@@ -12,9 +12,6 @@ public class Actuació {
 
 
 
-	public void setDurada(int durada) {
-		this.durada = durada;
-	}
 
 
 
@@ -23,10 +20,6 @@ public class Actuació {
 	}
 
 
-
-	public void setUsLlumsiSo(boolean usLlumsiSo) {
-		this.usLlumsiSo = usLlumsiSo;
-	}
 
 
 

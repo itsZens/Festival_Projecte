@@ -7,6 +7,7 @@ public abstract class VIP extends Persona {
 		super(nom, cognoms, DNI, edat);
 		this.diesAssistencia = 2;
 	}
+	
 
 	
 }

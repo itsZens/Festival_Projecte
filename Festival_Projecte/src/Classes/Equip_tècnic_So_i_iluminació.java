@@ -1,6 +1,5 @@
 package Classes;
 
-import java.util.Date;
 
 import Enumeration.TipusTorn;
 
@@ -8,7 +7,7 @@ public class Equip_tècnic_So_i_iluminació extends Professional {
 	private String nomEncarregat;
 	private boolean esCap;
 	public Equip_tècnic_So_i_iluminació(String nom, String cognoms, String DNI, int edat,
-			TipusTorn tornDia, Date horariInici, Date horariFinal, float salari, String nomEncarregat, boolean esCap) {
+			TipusTorn tornDia, int horariInici, int horariFinal, float salari, String nomEncarregat, boolean esCap) {
 		super(nom, cognoms, DNI, edat, tornDia, horariInici, horariFinal, salari);
 		this.nomEncarregat = nomEncarregat;
 		this.esCap = esCap;
@@ -16,14 +15,9 @@ public class Equip_tècnic_So_i_iluminació extends Professional {
 	public String getNomEncarregat() {
 		return nomEncarregat;
 	}
-	public void setNomEncarregat(String nomEncarregat) {
-		this.nomEncarregat = nomEncarregat;
-	}
+	
 	public boolean isEsCap() {
 		return esCap;
-	}
-	public void setEsCap(boolean esCap) {
-		this.esCap = esCap;
 	}
 	
 	public void AjustaSo() {

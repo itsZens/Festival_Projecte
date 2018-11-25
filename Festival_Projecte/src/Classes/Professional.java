@@ -8,19 +8,19 @@ import Enumeration.TipusTorn;
 public abstract class Professional extends  Persona implements Comparable<Professional> {
 	
 	protected TipusTorn tornDia;
-	protected Date horariInici;
-	protected Date horariFinal;
+	protected int horariInici;
+	protected int horariFinal;
 	protected float salari;
 	protected int tempsDisponibleDeDescans;
 	
 
 	
 	public Professional(String nom, String cognoms, String DNI, int edat, TipusTorn tornDia,
-			Date horariInici, Date horariFinal, float salari) {
+			int horariInici2, int horariFinal2, float salari) {
 		super(nom, cognoms, DNI, edat);
 		this.tornDia = tornDia;
-		this.horariInici = horariInici;
-		this.horariFinal = horariFinal;
+		this.horariInici = horariInici2;
+		this.horariFinal = horariFinal2;
 		this.salari = salari;
 		this.tempsDisponibleDeDescans = 60;
 	}
@@ -29,27 +29,19 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 	public TipusTorn getTornDia() {
 		return tornDia;
 	}
-	public void setTornDia(TipusTorn tornDia) {
-		this.tornDia = tornDia;
-	}
-	public Date getHorariInici() {
+	
+	public int getHorariInici() {
 		return horariInici;
 	}
-	public void setHorariInici(Date horariInici) {
-		this.horariInici = horariInici;
-	}
-	public Date getHorariFinal() {
+	
+	public int getHorariFinal() {
 		return horariFinal;
 	}
-	public void setHorariFinal(Date horariFinal) {
-		this.horariFinal = horariFinal;
-	}
+	
 	public float getSalari() {
 		return salari;
 	}
-	public void setSalari(float salari) {
-		this.salari = salari;
-	}
+	
 	
 	public int getTempsDisponibleDeDescans() {
 		return tempsDisponibleDeDescans;
