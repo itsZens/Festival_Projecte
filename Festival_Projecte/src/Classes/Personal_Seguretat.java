@@ -20,4 +20,9 @@ public class Personal_Seguretat extends Professional {
 		System.out.println("*Passa un espectador...*");
 		System.out.println("*Passa un espectador...*");
 	}
+	
+	public void AsseguraPerímetre() {
+		System.out.println("*Perímetre assegurat*");
+	}
+	
 }
