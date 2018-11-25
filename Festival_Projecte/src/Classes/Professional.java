@@ -1,15 +1,15 @@
 package Classes;
-
+import Enumeration.TipusTorn;
 
 public class Professional extends  Persona {
 	
 	protected String llocTreball;
-	protected String tornDia;
+	protected TipusTorn tornDia;
 	protected int horariInici;
 	protected int horariFinal;
 	protected float salari;
 	
-	public Professional(String nom, String cognoms, String DNI, int edat, String llocTreball, String tornDia,
+	public Professional(String nom, String cognoms, String DNI, int edat, String llocTreball, TipusTorn tornDia,
 			int horariInici, int horariFinal, float salari) {
 		super(nom, cognoms, DNI, edat);
 		this.llocTreball = llocTreball;
@@ -25,10 +25,10 @@ public class Professional extends  Persona {
 	public void setLlocTreball(String llocTreball) {
 		this.llocTreball = llocTreball;
 	}
-	public String getTornDia() {
+	public TipusTorn getTornDia() {
 		return tornDia;
 	}
-	public void setTornDia(String tornDia) {
+	public void setTornDia(TipusTorn tornDia) {
 		this.tornDia = tornDia;
 	}
 	public int getHorariInici() {
@@ -65,19 +65,16 @@ public class Professional extends  Persona {
 	
 	public void IniciJornada() {
 		
-		System.out.println("Estas treballant: "+super.nom+" "+super.cognoms);
+		System.out.println("Comences a treballar: " + super.nom + " " + super.cognoms);
 
 			
 		}
 	
 	public void ComprovaHorari(int hora) {
-		if(hora< horariInici || hora > horariFinal) {
-			
-			System.out.println("Estas fora del teu horari no pots accedir al recinte");
-			
+		if(hora < horariInici || hora > horariFinal) {			
+			System.out.println("Estas fora del teu horari no pots accedir al recinte");			
 		}else {
 			System.out.println("Estas dins del teu horari  pots accedir al recinte");
-
 		}
 	
 		
