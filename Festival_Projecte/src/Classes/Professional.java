@@ -1,7 +1,7 @@
 package Classes;
 import Enumeration.TipusTorn;
 
-public class Professional extends  Persona {
+public abstract class Professional extends  Persona implements Comparable<Professional> {
 	
 	protected String llocTreball;
 	protected TipusTorn tornDia;
@@ -66,20 +66,20 @@ public class Professional extends  Persona {
 	public void IniciJornada() {
 		
 		System.out.println("Comences a treballar: " + super.nom + " " + super.cognoms);
-
-			
 		}
 	
 	public void ComprovaHorari(int hora) {
 		if(hora < horariInici || hora > horariFinal) {			
-			System.out.println("Estas fora del teu horari no pots accedir al recinte");			
+			System.out.println("Estàs fora del teu horari no pots accedir al recinte");			
 		}else {
-			System.out.println("Estas dins del teu horari  pots accedir al recinte");
-		}
-	
-		
-		 
+			System.out.println("Estàs dins del teu horari  pots accedir al recinte");
+		}	 
 	}
 	
-
+	@Override
+	public int compareTo(Professional t) {
+		if (this.salari == t.salari)		return 0;
+		else if (this.salari > t.salari)	return 1;
+		else 								return -1;
+	}
 }
