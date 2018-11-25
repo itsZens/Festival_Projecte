@@ -5,9 +5,9 @@ public class Espectador  extends Persona{
 	private String tipusEntrada;
 	private int diesAssistencia;
 	private float pressupost;
-	public Espectador(String nom, String cognoms, String dNI, int edat, String tipusEntrada, int diesAssistencia,
+	public Espectador(String nom, String cognoms, String DNI, int edat, String tipusEntrada, int diesAssistencia,
 			float pressupost) {
-		super(nom, cognoms, dNI, edat);
+		super(nom, cognoms, DNI, edat);
 		this.tipusEntrada = tipusEntrada;
 		this.diesAssistencia = diesAssistencia;
 		this.pressupost = pressupost;
@@ -30,16 +30,7 @@ public class Espectador  extends Persona{
 	public void setPressupost(float pressupost) {
 		this.pressupost = pressupost;
 	}
-	@Override
-	public void AccedeixenAlRecinte() {
-		// TODO Auto-generated method stub
-		super.AccedeixenAlRecinte();
-	}
-	@Override
-	public void SurtenDelRecinte() {
-		// TODO Auto-generated method stub
-		super.SurtenDelRecinte();
-	}
+	 
 	
 	public float Pagar(float preu) {
 		
