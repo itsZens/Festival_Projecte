@@ -55,14 +55,31 @@ public class Professional extends  Persona {
 	}
 	@Override
 	public void SurtenDelRecinte() {
+		int[] hora;
+		//hora=new int[5,6,7,8,9,1011121314151617];
+			
+		//ComprovaHorari(hora);
+		
 		super.SurtenDelRecinte();
 	}        
 	
-	public void IniciJornada(int horaInici) {
+	public void IniciJornada() {
 		
-		if(horaInici < 8) {
+		System.out.println("Estas treballant: "+super.nom+" "+super.cognoms);
+
 			
 		}
+	
+	public void ComprovaHorari(int hora) {
+		if(hora< horariInici || hora > horariFinal) {
+			
+			System.out.println("Estas fora del teu horari no pots accedir al recinte");
+			
+		}else {
+			System.out.println("Estas dins del teu horari  pots accedir al recinte");
+
+		}
+	
 		
 		 
 	}
