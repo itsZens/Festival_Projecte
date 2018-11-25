@@ -1,8 +1,9 @@
 package Classes;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 import Enumeration.TipusTorn;
-import sun.util.calendar.LocalGregorianCalendar.Date;
 
 public abstract class Professional extends  Persona implements Comparable<Professional> {
 	
@@ -60,7 +61,7 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 	public void SurtenDelRecinte() {
 	    GregorianCalendar hora = new GregorianCalendar();
 	    int horaAleatoria = randBetween(7, 23);
-	    hora.set(hora.HOUR, horaAleatoria);
+	    hora.set(Calendar.HOUR, horaAleatoria);
 		ComprovaHorari(hora);
 		
 		
