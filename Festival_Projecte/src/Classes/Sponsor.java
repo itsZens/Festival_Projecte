@@ -20,7 +20,7 @@ public class Sponsor extends  Persona  {
 	public void espaiPublicitari() {
 		
 		System.out.println("S'han posat els anuncis");
-		
+		//d
 		
 	}
 	
