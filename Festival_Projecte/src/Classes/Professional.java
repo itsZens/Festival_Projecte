@@ -4,11 +4,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import Enumeration.TipusTorn;
-<<<<<<< HEAD
-
-=======
  
->>>>>>> branch 'master' of https://github.com/itsZens/Festival_Projecte.git
 public abstract class Professional extends  Persona implements Comparable<Professional> {
 	
 	protected String llocTreball;
@@ -64,9 +60,7 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 	public int getTempsDisponibleDeDescans() {
 		return tempsDisponibleDeDescans;
 	}
-	public void setTempsDisponibleDeDescans(int tempsDisponibleDeDescans) {
-		this.tempsDisponibleDeDescans = tempsDisponibleDeDescans;
-	}
+	
 	@Override
 	public void AccedeixenAlRecinte() {
 		super.AccedeixenAlRecinte();
@@ -115,6 +109,8 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 				 super.setDintreRecinte(false);
 			}
 		}
+		
+		
 	}
 	
 	@Override
@@ -123,7 +119,6 @@ public abstract class Professional extends  Persona implements Comparable<Profes
 		else if (this.salari > t.salari)	return 1;
 		else 								return -1;
 	}
-	
 	 private static int randBetween(int start, int end) {
 	        return start + (int)Math.round(Math.random() * (end - start));
 	    }
