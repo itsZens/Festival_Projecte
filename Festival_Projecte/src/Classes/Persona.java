@@ -116,5 +116,25 @@ public abstract class Persona implements Públic_Festival{
 		System.out.println("La gent mostra la seva indignació");
 		
 	}
+	private boolean validaDNI(String DNI){
+		//Valida longitud
+		if (DNI.length()!=9) 
+			return false;
+		//Valida que els 8 primers caràcters són dígits
+		for (int i=0; i<DNI.length()-1;i++)
+			if (!Character.isDigit(DNI.charAt(i))) 
+				return false;
+		//Valida que el darrer caràcter és una lletra
+		if (!Character.isLetter(DNI.charAt(8))) 
+			return false; 
+		return true;
+	}
+
+	public void setDNI(String dNI) {
+		if (this.validaDNI(dNI))
+			this.DNI = dNI;
+		else
+			System.out.println("El DNI introduït és incorrecte.");
+	}
 
 }
