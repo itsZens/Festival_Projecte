@@ -1,6 +1,7 @@
 package Classes;
 
 
+import Enumeration.HumanNeeds;
 import Enumeration.TipusTorn;
 
 public class Staff extends Professional{
@@ -12,6 +13,15 @@ public class Staff extends Professional{
 	
 	public void AjudaEspectadors() {
 		System.out.println("*Donant indicacions als assistents*");
+	}
+
+	@Override
+	public void ComplirNecessitats() {
+		if(this.necessitats != HumanNeeds.Cap) {
+			this.setNecessitats(HumanNeeds.Cap);
+		} else {
+			System.out.println("El professional " + nom + " " + cognoms +" no té cap necessitat.");
+		}		
 	}
 	
 }

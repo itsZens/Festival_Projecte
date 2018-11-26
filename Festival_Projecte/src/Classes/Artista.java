@@ -1,5 +1,6 @@
 package Classes;
 
+import Enumeration.HumanNeeds;
 import Enumeration.TipusTorn;
 
 public class Artista extends Professional {
@@ -25,6 +26,16 @@ public class Artista extends Professional {
 	
 	public void Actua() {
 		System.out.println("Està actuant....");
+	}
+
+	@Override
+	public void ComplirNecessitats() {
+		if(this.necessitats != HumanNeeds.Cap) {
+			this.setNecessitats(HumanNeeds.Cap);
+		} else {
+			System.out.println("L'artista " + nom + " " + cognoms +" no té cap necessitat.");
+		}
+		
 	}
 	
 	

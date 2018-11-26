@@ -49,7 +49,8 @@ public class Main {
 		p2.setNecessitats(HumanNeeds.Gana);
 		p2.ComplirNecessitats();
 		p1.setNecessitats(HumanNeeds.Lavabo);
-		p2.Cantar();
+		p2.Ballar();
+		
 		
 		
 	}

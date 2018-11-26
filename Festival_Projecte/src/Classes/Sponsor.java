@@ -1,5 +1,7 @@
 package Classes;
 
+import Enumeration.HumanNeeds;
+
 public class Sponsor extends  Persona  { 
 	
 	private String marcaSponsor;
@@ -22,6 +24,15 @@ public class Sponsor extends  Persona  {
 		System.out.println("S'han posat els anuncis");
 		//d
 		
+	}
+
+	@Override
+	public void ComplirNecessitats() {
+		if(this.necessitats != HumanNeeds.Cap) {
+			this.setNecessitats(HumanNeeds.Cap);
+		} else {
+			System.out.println(nom + " " + cognoms +" "+ marcaSponsor+" no té cap necessitat.");
+		}		
 	}
 	
 

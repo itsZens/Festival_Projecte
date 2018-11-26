@@ -1,6 +1,7 @@
 package Classes;
 
 
+import Enumeration.HumanNeeds;
 import Enumeration.TipusTorn;
 
 public class Equip_tècnic_So_i_iluminació extends Professional {
@@ -36,5 +37,14 @@ public class Equip_tècnic_So_i_iluminació extends Professional {
 		System.out.println("Activa les llums frontals de l'ecenari..");
 		System.out.println("Pujant so 3...");
 
+	}
+	@Override
+	public void ComplirNecessitats() {
+		if(this.necessitats != HumanNeeds.Cap) {
+			this.setNecessitats(HumanNeeds.Cap);
+		} else {
+			System.out.println("el tècnic " + nom + " " + cognoms +" no té cap necessitat.");
+		}
+		
 	}
 }

@@ -68,13 +68,7 @@ public abstract class Persona implements Públic_Festival{
 		}
 	}
 	
-	public void ComplirNecessitats() {
-		if(this.necessitats != HumanNeeds.Cap) {
-			this.setNecessitats(HumanNeeds.Cap);
-		} else {
-			System.out.println("La persona " + nom + " " + cognoms +" no té cap necessitat.");
-		}
-	}
+	public abstract void ComplirNecessitats();
 	
 	public void DemanaComanda() {
 		if(this.necessitats == HumanNeeds.Sed) {
@@ -95,25 +89,25 @@ public abstract class Persona implements Públic_Festival{
 	@Override
 	public void Saltar() {
 		
-		System.out.println("Saltant");
+		System.out.println("La "+nom+" "+cognoms+" està saltant");
 		
 	}
 	@Override
 	public void Ballar() {
 		
-		System.out.println("Ballant");
+		System.out.println("La "+nom+" "+cognoms+" està ballant");
 		
 	}
 	@Override
 	public void Cantar() {
 		
-		System.out.println("Cantant");
+		System.out.println("La "+nom+" "+cognoms+" està cantant");
 		
 	}
 	@Override
 	public void GaudirActuacio() {
 		
-		System.out.println("Sembla que li encanta");
+		System.out.println(nom+" "+cognoms+" sembla que li encanta");
 		
 	}
 	@Override

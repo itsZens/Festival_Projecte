@@ -1,6 +1,7 @@
 package Classes;
 
 
+import Enumeration.HumanNeeds;
 import Enumeration.TipusTorn;
 
 public class Foodtruck extends Professional{
@@ -41,6 +42,14 @@ public class Foodtruck extends Professional{
 		return preu ;
 		
 		
+	}
+	@Override
+	public void ComplirNecessitats() {
+		if(this.necessitats != HumanNeeds.Cap) {
+			this.setNecessitats(HumanNeeds.Cap);
+		} else {
+			System.out.println("L'encarregat  " + nomEncarregat + " " + cognoms +" no té cap necessitat.");
+		}		
 	}
 
 }

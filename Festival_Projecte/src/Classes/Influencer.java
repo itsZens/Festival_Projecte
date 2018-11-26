@@ -1,4 +1,5 @@
 package Classes;
+import Enumeration.HumanNeeds;
 import Enumeration.TipusInfluencer;
 
 public class Influencer extends VIP implements Comparable<Influencer> {
@@ -48,5 +49,15 @@ public class Influencer extends VIP implements Comparable<Influencer> {
 		if (this.numSeguidors == i.numSeguidors)		return 0;
 		else if (this.numSeguidors > i.numSeguidors)	return 1;
 		else 											return -1;
+	}
+
+
+	@Override
+	public void ComplirNecessitats() {
+		if(this.necessitats != HumanNeeds.Cap) {
+			this.setNecessitats(HumanNeeds.Cap);
+		} else {
+			System.out.println("L'infuencer " + nom + " " + cognoms +" no té cap necessitat.");
+		}		
 	}
 }

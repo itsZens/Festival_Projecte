@@ -1,5 +1,6 @@
 package Classes;
 
+import Enumeration.HumanNeeds;
 import Enumeration.TipusEntrada;
 import Interfaces.Públic_Festival;
 
@@ -63,6 +64,15 @@ public class Espectador extends Persona implements Públic_Festival{
 	public void DescontentAmbActuacio() {
 		
 		System.out.println("La gent mostra la seva indignació");
+		
+	}
+	@Override
+	public void ComplirNecessitats() {
+		if(this.necessitats != HumanNeeds.Cap) {
+			this.setNecessitats(HumanNeeds.Cap);
+		} else {
+			System.out.println("L'espectador " + nom + " " + cognoms +" no té cap necessitat.");
+		}
 		
 	}
 	
