@@ -11,10 +11,17 @@ public abstract class Persona implements Públic_Festival{
 	protected HumanNeeds necessitats = HumanNeeds.Cap;
 	protected boolean dintreRecinte = false;
 	
+	/**
+	 * Constructor
+	 */
 	public Persona(String nom, String cognoms, String DNI, int edat) {
 		this.nom = nom;
 		this.cognoms = cognoms;
-		this.DNI = DNI;
+		if (this.validaDNI(DNI)) {
+			this.DNI = DNI;
+		} else {
+			System.out.println("El DNI introduït no és vàlid.");
+		}
 		this.edat = edat;
 		this.necessitats = HumanNeeds.Cap;
 		this.dintreRecinte = false;
@@ -30,6 +37,12 @@ public abstract class Persona implements Públic_Festival{
 
 	public String getDNI() {
 		return DNI;
+	}
+	public void setDNI(String DNI) {
+		if (this.validaDNI(DNI))
+			this.DNI = DNI;
+		else
+			System.out.println("El DNI introduït no és vàlid.");
 	}
 
 	public int getEdat() {
@@ -52,6 +65,9 @@ public abstract class Persona implements Públic_Festival{
 		this.dintreRecinte = dintreRecinte;
 	}
 	
+	/**
+	 * Per simular el procés d'entrar al recinte
+	 */
 	public void AccedeixenAlRecinte() {
 		if(this.dintreRecinte == false) {
 			this.setDintreRecinte(true);
@@ -60,6 +76,9 @@ public abstract class Persona implements Públic_Festival{
 		}
 	}
 	
+	/**
+	 * Per simular el procés de sortir del recinte
+	 */
 	public void SurtenDelRecinte() {
 		if(this.dintreRecinte == true) {
 			this.setDintreRecinte(false);
@@ -70,6 +89,9 @@ public abstract class Persona implements Públic_Festival{
 	
 	public abstract void ComplirNecessitats();
 	
+	/**
+	 * Per simular el de demanar una comanda
+	 */	
 	public void DemanaComanda() {
 		if(this.necessitats == HumanNeeds.Sed) {
 			System.out.println("La persona " + nom + " " + cognoms +" està demanant una beguda.");
@@ -82,10 +104,17 @@ public abstract class Persona implements Públic_Festival{
 		}
 	}
 
+	/**
+	 * Redefinició del mètode toString() per a que es presenti la informació bàsica de cada persona
+	 */
 	@Override
 	public String toString() {
 		return "Em dic " + nom + " " + cognoms + ", el meu DNI és " + DNI + "i la meva edat és " + edat + ".";
 	}
+	
+	/**
+	 * Implementació de la interfície Public_Festival
+	 */
 	@Override
 	public void Saltar() {
 		
@@ -116,6 +145,11 @@ public abstract class Persona implements Públic_Festival{
 		System.out.println("La gent mostra la seva indignació");
 		
 	}
+	
+	/**
+	 * Comprovar que el DNI introduït és vàlid
+	 * @param Un dni
+	 */
 	private boolean validaDNI(String DNI){
 		//Valida longitud
 		if (DNI.length()!=9) 
@@ -129,12 +163,4 @@ public abstract class Persona implements Públic_Festival{
 			return false; 
 		return true;
 	}
-
-	public void setDNI(String dNI) {
-		if (this.validaDNI(dNI))
-			this.DNI = dNI;
-		else
-			System.out.println("El DNI introduït és incorrecte.");
-	}
-
 }

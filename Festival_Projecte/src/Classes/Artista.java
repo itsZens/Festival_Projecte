@@ -4,14 +4,11 @@ import Enumeration.HumanNeeds;
 import Enumeration.TipusTorn;
 
 public class Artista extends Professional {
-	
-	
-
 	private String nomArtistic;
 	
-	
-
-	
+	/**
+	 * Constructor
+	 */
 	public Artista(String nom, String cognoms, String DNI, int edat, TipusTorn tornDia,
 			int horariInici, int horariFinal, float salari, String nomArtistic) {
 		super(nom, cognoms, DNI, edat, tornDia, horariInici, horariFinal, salari);

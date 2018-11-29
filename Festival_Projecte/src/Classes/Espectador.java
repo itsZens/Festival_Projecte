@@ -9,6 +9,10 @@ public class Espectador extends Persona implements Públic_Festival{
 	private int diesAssistencia;
 	private float pressupost;
 	private Enumeration.TipusEntrada tipusEntrada;
+	
+	/**
+	 * Constructor
+	 */
 	public Espectador(String nom, String cognoms, String DNI, int edat, TipusEntrada tipusEntrada, int diesAssistencia,
 			float pressupost) {
 		super(nom, cognoms, DNI, edat);
@@ -16,6 +20,7 @@ public class Espectador extends Persona implements Públic_Festival{
 		this.diesAssistencia = diesAssistencia;
 		this.pressupost = pressupost;
 	}
+	
 	public TipusEntrada getTipusEntrada() {
 		return tipusEntrada;
 	}
@@ -28,44 +33,42 @@ public class Espectador extends Persona implements Públic_Festival{
 		return pressupost;
 	}
 	
-	 
-	
+	/**
+	 * Per simular el procés de pagament dut a terme en el recinte tenint en compte el seu pressupost
+	 * @param Import a pagar
+	 */
 	public float Pagar(float preu) {
-		
 		return pressupost - preu;
-		
-		
 	}
+	
+	/**
+	 * Implementació interfície Public_Festival
+	 */
 	@Override
 	public void Saltar() {
-		
 		System.out.println("Saltant");
-		
 	}
+	
 	@Override
 	public void Ballar() {
-		
-		System.out.println("Ballant");
-		
+		System.out.println("Ballant");	
 	}
+	
 	@Override
 	public void Cantar() {
-		
 		System.out.println("Cantant");
-		
 	}
+	
 	@Override
 	public void GaudirActuacio() {
-		
 		System.out.println("Sembla que li encanta");
-		
 	}
+	
 	@Override
 	public void DescontentAmbActuacio() {
-		
 		System.out.println("La gent mostra la seva indignació");
-		
 	}
+	
 	@Override
 	public void ComplirNecessitats() {
 		if(this.necessitats != HumanNeeds.Cap) {
@@ -73,10 +76,5 @@ public class Espectador extends Persona implements Públic_Festival{
 		} else {
 			System.out.println("L'espectador " + nom + " " + cognoms +" no té cap necessitat.");
 		}
-		
-	}
-	
-	
-	
-	
+	}	
  }

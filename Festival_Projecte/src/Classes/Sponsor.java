@@ -6,6 +6,9 @@ public class Sponsor extends  Persona  {
 	
 	private String marcaSponsor;
 
+	/**
+	 * Constructor 
+	 */
 	public Sponsor(String nom, String cognoms, String DNI, int edat, String marcaSponsor) {
 		super(nom, cognoms, DNI, edat);
 		this.marcaSponsor = marcaSponsor;
@@ -19,13 +22,16 @@ public class Sponsor extends  Persona  {
 		this.marcaSponsor = marcaSponsor;
 	}
 	
+	/**
+	 * Per simular que hi ha anuncis dels sponsors
+	 */
 	public void espaiPublicitari() {
-		
-		System.out.println("S'han posat els anuncis");
-		//d
-		
+		System.out.println("S'han posat els anuncis");		
 	}
 
+	/**
+	 * Mètode ComplirNecessitats() personal·litzat pels sponsors 
+	 */
 	@Override
 	public void ComplirNecessitats() {
 		if(this.necessitats != HumanNeeds.Cap) {

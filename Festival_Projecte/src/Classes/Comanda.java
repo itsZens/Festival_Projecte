@@ -6,6 +6,9 @@ public class Comanda {
 	private boolean esAcabada;
 	private MenuTipus tipusMenu;
 	
+	/**
+	 * Constructor
+	 */
 	public Comanda(double preuTotal, MenuTipus tipusMenu) {
 		this.preuTotal = preuTotal;
 		this.tipusMenu = tipusMenu;
@@ -28,10 +31,16 @@ public class Comanda {
 		return tipusMenu;
 	}
 
+	/**
+	 * Per simular el procés d'elaboració de la comanda
+	 */
 	public void PreparacioComanda() {
 		System.out.println("*Comanda en procés...*");
 	}
 	
+	/**
+	 * Per simular el procés d'entrega de la comanda
+	 */
 	public void ComandaAcabada() {
 		if(this.esAcabada == false) {
 			this.setEsAcabada(true);
