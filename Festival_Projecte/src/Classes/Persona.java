@@ -71,6 +71,7 @@ public abstract class Persona implements Públic_Festival{
 	public void AccedeixenAlRecinte() {
 		if(this.dintreRecinte == false) {
 			this.setDintreRecinte(true);
+			System.out.println("La persona " + nom + " " + cognoms +" ha entrat dintre del recinte.");
 		} else {
 			System.out.println("La persona " + nom + " " + cognoms +" ja està dintre del recinte.");
 		}
@@ -82,6 +83,7 @@ public abstract class Persona implements Públic_Festival{
 	public void SurtenDelRecinte() {
 		if(this.dintreRecinte == true) {
 			this.setDintreRecinte(false);
+			System.out.println("La persona " + nom + " " + cognoms +" surt del recinte.");
 		} else {
 			System.out.println("La persona " + nom + " " + cognoms +" ja està fora del recinte.");
 		}

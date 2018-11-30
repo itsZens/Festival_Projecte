@@ -44,6 +44,7 @@ public class Main {
 		
 		
 		p1.AccedeixenAlRecinte();
+		p1.SurtenDelRecinte();
 		c1.ComandaAcabada();
 		p11.ComplirNecessitats();
 		p2.setNecessitats(HumanNeeds.Gana);
